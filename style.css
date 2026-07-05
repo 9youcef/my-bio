@@ -26,19 +26,20 @@ body {
     z-index: -2; /* يضمن بقاء الفيديو خلف المحتوى */
 }
 
-/* 2. المربع الكبير */
+/* عدل الكود الخاص بـ .card-container ليصبح هكذا */
 .card-container {
-    position: relative; /* مهم لكي نضع فيديو السحاب داخله */
+    position: relative;
     width: 90%;
     max-width: 850px;
     border-radius: 25px;
-    overflow: visible; /* تغيير جذري هنا للسماح للصورة بالخروج */
+    /* أزلنا overflow: hidden التي كانت تسبب المشكلة */
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
     border: 1px solid rgba(255, 0, 0, 0.3);
-    margin-top: 100px; /* مساحة علوية لتظهر الشخصية */
+    margin-top: 100px; /* مساحة لنزول الشخصية */
+    overflow: visible; /* مهم جداً لتظهر الشخصية */
 }
 
-/* 3. فيديو السحاب داخل المربع */
+/* الآن، سنجعل الفيديو يأخذ الزوايا الدائرية ليبقى الموقع جميلاً */
 .card-bg-video {
     position: absolute;
     top: 0;
@@ -47,8 +48,8 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    border-radius: 25px; /* أضفنا الزوايا الدائرية هنا للفيديو نفسه */
     filter: brightness(0.4) sepia(1) hue-rotate(-50deg) saturate(5); 
-    /* الفلتر السحري أعلاه: يحول أي فيديو سحاب عادي إلى اللون الأحمر المظلم تلقائياً! */
 }
 
 /* 4. الطبقة الحاضنة للمحتوى فوق الفيديو */
