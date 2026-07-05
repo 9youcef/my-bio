@@ -32,9 +32,10 @@ body {
     width: 90%;
     max-width: 850px;
     border-radius: 25px;
-    overflow: hidden; /* لقص الفيديو عند أطراف المربع الدائرية */
+    overflow: visible; /* تغيير جذري هنا للسماح للصورة بالخروج */
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
     border: 1px solid rgba(255, 0, 0, 0.3);
+    margin-top: 100px; /* مساحة علوية لتظهر الشخصية */
 }
 
 /* 3. فيديو السحاب داخل المربع */
@@ -152,3 +153,15 @@ body {
     height: 20px;
     object-fit: contain; /* يضمن عدم تشوه الشعار عند العرض */
 }
+
+/* تنسيق شخصية الأنمي التي تطل */
+.peeking-char {
+    position: absolute;
+    top: -110px;        /* تحكم في هذا الرقم لرفعها أو تنزيلها */
+    left: 50%;          /* التوسيط الأفقي */
+    transform: translateX(-50%); /* التوسيط الدقيق */
+    width: 180px;       /* حجم الصورة، يمكنك تصغيره أو تكبيره */
+    z-index: 10;        /* لتكون فوق كل شيء */
+    pointer-events: none; /* لكي لا تعيق الضغط على الأزرار */
+}
+
