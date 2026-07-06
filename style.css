@@ -122,11 +122,28 @@ body {
 .steam-btn { background: linear-gradient(135deg, #002ff5 0%, #001cb4 100%); }
 .trade-btn { background: linear-gradient(135deg, #4655cc 0%, #293599 100%); }
 
+/* هذا الكود يجعل الشخصية تظهر من الأسفل للأعلى مع تأثير شفافية */
 .peeking-char {
     position: absolute;
     top: -55px;
-    left: 20px;
+    left: 50%;                 /* نضعها في المنتصف */
+    transform: translateX(-50%); /* نضبط التوسيط الدقيق */
     width: 80px;
     z-index: 10;
     pointer-events: none;
+    
+    /* إضافة الأنيميشن هنا */
+    animation: peekAnimation 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* تعريف الحركة (تأثير الصعود) */
+@keyframes peekAnimation {
+    0% {
+        top: 0px;        /* تبدأ من خلف الصندوق */
+        opacity: 0;      /* غير مرئية */
+    }
+    100% {
+        top: -55px;      /* تستقر في مكانها النهائي */
+        opacity: 1;      /* تظهر بوضوح */
+    }
 }
