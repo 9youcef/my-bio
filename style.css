@@ -151,6 +151,6 @@ body {
 
 @keyframes peekAnimation {
     0% { top: 0px; opacity: 0; }
-    100% { top: -55px; opacity: 1; }
+    100% { top: -110px; opacity: 1; }
 }
 
