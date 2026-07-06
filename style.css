@@ -160,7 +160,7 @@ body {
 .peeking-char {
     position: absolute;
     top: -85px;         /* قمت بزيادتها قليلاً لتظهر بشكل أفضل */
-    left: 45%;          /* استخدمنا Left مع النسبة لضمان التوسيط الدقيق في المركز */
+    right: 45%;          /* استخدمنا Left مع النسبة لضمان التوسيط الدقيق في المركز */
     width: 120px;       /* حجم مناسب */
     z-index: 10;        
     pointer-events: none;
