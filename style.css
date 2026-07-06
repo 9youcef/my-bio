@@ -137,3 +137,12 @@ body {
 .epic-btn { background: linear-gradient(135deg, #202020 0%, #111111 100%); border: 1px solid rgba(255, 255, 255, 0.05); }
 .steam-btn { background: linear-gradient(135deg, #002ff5 0%, #001cb4 100%); }
 .trade-btn { background: linear-gradient(135deg, #4655cc 0%, #293599 100%); }
+
+.peeking-char {
+    position: absolute;
+    top: -55px;
+    left: 20px;
+    width: 80px;
+    z-index: 10;
+    pointer-events: none;
+}
