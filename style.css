@@ -1,307 +1,139 @@
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
-
 
 body {
-
     min-height: 100vh;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
     overflow: hidden;
-
     position: relative;
-
     background-color: #000;
-
 }
 
-
-
-/* 1. تثبيت فيديو الخلفية الكبيرة خلف كل شيء */
-
+/* 1. تثبيت فيديو الخلفية الكبيرة */
 .main-bg-video {
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
-    object-fit: cover; /* تجعل الفيديو يملأ الشاشة بالكامل بدون تشويه */
-
-    z-index: -2; /* يضمن بقاء الفيديو خلف المحتوى */
-
+    object-fit: cover;
+    z-index: -2;
 }
-
-
 
 /* 2. المربع الكبير */
-
 .card-container {
-
-    position: relative; /* مهم لكي نضع فيديو السحاب داخله */
-
+    position: relative;
     width: 90%;
-
     max-width: 850px;
-
     border-radius: 25px;
-
-    overflow: hidden; /* لقص الفيديو عند أطراف المربع الدائرية */
-
+    overflow: hidden; /* هذا السطر هو الذي يضمن بقاء الفيديوهات داخل الحواف الدائرية */
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
-
     border: 1px solid rgba(255, 0, 0, 0.3);
-
 }
-
-
 
 /* 3. فيديو السحاب داخل المربع */
-
 .card-bg-video {
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     z-index: -1;
-
     filter: brightness(0.4) sepia(1) hue-rotate(-50deg) saturate(5); 
-
-    /* الفلتر السحري أعلاه: يحول أي فيديو سحاب عادي إلى اللون الأحمر المظلم تلقائياً! */
-
 }
 
-
-
-/* 4. الطبقة الحاضنة للمحتوى فوق الفيديو */
-
+/* 4. الطبقة الحاضنة للمحتوى */
 .card-content {
-
     display: flex;
-
-    flex-direction: row-reverse; /* هذا السطر يقوم بعكس الأماكن بذكاء! */
-
+    flex-direction: row-reverse;
     justify-content: space-between;
-
     align-items: center;
-
     gap: 40px;
-
     padding: 50px 40px;
-
     width: 100%;
-
-    background: rgba(0, 0, 0, 0.2); /* تعتيم خفيف إضافي لتوضيح النص */
-
+    background: rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* 5. قسم البروفايل */
-
 .profile-box {
-
     flex: 1;
-
     text-align: center;
-
     color: white;
-
 }
-
-
 
 .profile-img {
-
     width: 120px;
-
     height: 120px;
-
     border-radius: 50%;
-
     border: 3px solid #ff0055;
-
     margin-bottom: 15px;
-
     object-fit: cover;
-
 }
-
-
 
 .name {
-
     font-size: 1.6rem;
-
     letter-spacing: 2px;
-
     margin-bottom: 10px;
-
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-
 }
-
-
 
 .dhikr {
-
     font-size: 1.8rem;
-
     font-weight: bold;
-
     color: #ffffff;
-
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-
 }
 
-
-
-/* ضبط قسم الأزرار ليكون أصغر حجماً ولا يمتد بشكل مفرط */
-
+/* 6. قسم الأزرار */
 .buttons-box {
-
     flex: 1;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
-
     width: 100%;
-
-    max-width: 290px; /* جعلنا العرض الأقصى أصغر ليتناسق مثل الأصل تماماً */
-
-    margin-right: auto; /* يدفع الأزرار لليمين قليلاً ويوازن المسافات */
-
+    max-width: 290px;
+    margin-right: auto;
 }
-
-
-
-/* تنسيق الأزرار الاحترافي مع توزيع النص والأيقونة بالتساوي */
 
 .btn {
-
     display: flex;
-
-    justify-content: space-between; /* يضع النص في أقصى جهة والأيقونة في الجهة المقابلة */
-
+    justify-content: space-between;
     align-items: center;
-
-    padding: 12px 24px; /* تقليل الحشو لتبدو الأزرار أنحف وأجمل */
-
+    padding: 12px 24px;
     color: white;
-
     text-decoration: none;
-
-    border-radius: 20px; /* انحناءات ناعمة متناسقة مع الصورة */
-
+    border-radius: 20px;
     font-weight: 500;
-
     font-size: 1.05rem;
-
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-
+    transition: transform 0.2s ease, filter 0.2s ease;
     box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3);
-
 }
-
-
 
 .btn:hover {
-
-    transform: translateY(-2px); /* رفعة خفيفة جداً للأعلى عند المرور بالماوس */
-
-    filter: brightness(1.15); /* إضاءة الزر قليلاً عند لمسه */
-
+    transform: translateY(-2px);
+    filter: brightness(1.15);
 }
-
-
-
-/* الأيقونة داخل الزر */
 
 .btn-icon {
-
     font-size: 1.3rem;
-
 }
 
-
-
-/* تدرجات ألوان الأزرار الدقيقة المأخوذة من موقعك الأصلي */
-
-.discord-btn {
-
-    background: linear-gradient(135deg, #4459f7 0%, #2b39b5 100%);
-
-}
-
-
-
-.epic-btn {
-
-    background: linear-gradient(135deg, #202020 0%, #111111 100%);
-
-    border: 1px solid rgba(255, 255, 255, 0.05);
-
-}
-
-
-
-.steam-btn {
-
-    background: linear-gradient(135deg, #002ff5 0%, #001cb4 100%);
-
-}
-
-
-
-.trade-btn {
-
-    background: linear-gradient(135deg, #4655cc 0%, #293599 100%);
-
-}
-
-
-
-/* تنسيق حجم شعار إبيك جيمز ليطابق بقية الأيقونات تماماً */
-
+/* تنسيق حجم شعار إبيك جيمز ليبقى صغيراً داخل الزر */
 .btn-img-icon {
-
-    width: 20px;   /* نفس حجم الأيقونات الأخرى */
-
+    width: 20px;   
     height: 20px;
-
-    object-fit: contain; /* يضمن عدم تشوه الشعار عند العرض */
-
+    object-fit: contain; 
 }
+
+/* ألوان الأزرار */
+.discord-btn { background: linear-gradient(135deg, #4459f7 0%, #2b39b5 100%); }
+.epic-btn { background: linear-gradient(135deg, #202020 0%, #111111 100%); border: 1px solid rgba(255, 255, 255, 0.05); }
+.steam-btn { background: linear-gradient(135deg, #002ff5 0%, #001cb4 100%); }
+.trade-btn { background: linear-gradient(135deg, #4655cc 0%, #293599 100%); }
