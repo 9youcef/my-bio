@@ -31,8 +31,8 @@ body {
     position: relative;
     width: 90%;
     max-width: 850px;
-    border-radius: 25px;
-    /* أزلنا overflow: hidden التي كانت تسبب المشكلة */
+    border-radius: 25px; /* الزوايا الدائرية هنا */
+    margin-top: 100px; 
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
     border: 1px solid rgba(255, 0, 0, 0.3);
     margin-top: 100px; /* مساحة لنزول الشخصية */
@@ -158,11 +158,11 @@ body {
 /* تنسيق شخصية الأنمي التي تطل */
 .peeking-char {
     position: absolute;
-    top: -110px;        /* تحكم في هذا الرقم لرفعها أو تنزيلها */
-    left: 50%;          /* التوسيط الأفقي */
-    transform: translateX(-50%); /* التوسيط الدقيق */
-    width: 180px;       /* حجم الصورة، يمكنك تصغيره أو تكبيره */
-    z-index: 10;        /* لتكون فوق كل شيء */
-    pointer-events: none; /* لكي لا تعيق الضغط على الأزرار */
+    top: -80px;         /* ارفعها للأعلى لتظهر وهي تطل */
+    left: 50%;          /* توسيط */
+    transform: translateX(-50%); /* ضبط التوسيط */
+    width: 150px;       /* حجم الشخصية (صغرها إذا كانت كبيرة جداً) */
+    z-index: 100;       /* جعلها فوق كل شيء */
+    pointer-events: none; /* لمنعها من حجب الماوس عن الروابط */
 }
 
