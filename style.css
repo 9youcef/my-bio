@@ -1,107 +1,24 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* تنسيق أساسي */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { min-height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #000; overflow: hidden; }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden;
-    position: relative;
-    background-color: #000;
-}
+/* الفيديوهات */
+.main-bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.card-bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; border-radius: 25px; filter: brightness(0.4) sepia(1) hue-rotate(-50deg) saturate(5); }
 
-.main-bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
+/* الصندوق */
+.card-container { position: relative; width: 90%; max-width: 850px; border-radius: 25px; margin-top: 100px; box-shadow: 0 0 40px rgba(255, 0, 0, 0.4); border: 1px solid rgba(255, 0, 0, 0.3); overflow: visible; }
+.card-content { display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center; gap: 40px; padding: 50px 40px; }
 
-.card-container {
-    position: relative;
-    width: 90%;
-    max-width: 850px;
-    border-radius: 25px;
-    margin-top: 100px;
-    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    overflow: visible; /* مهم جداً لتظهر الشخصية فوق الحواف */
-}
+/* الأزرار والأيقونات - هنا الحل */
+.buttons-box { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.btn { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; color: white; text-decoration: none; border-radius: 20px; font-weight: 500; }
+.btn-img-icon { width: 25px !important; height: 25px !important; object-fit: contain; }
 
-.card-bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    border-radius: 25px;
-    filter: brightness(0.4) sepia(1) hue-rotate(-50deg) saturate(5);
-}
-
-.card-content {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    padding: 50px 40px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.profile-box { flex: 1; text-align: center; color: white; }
-.profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #ff0055; margin-bottom: 15px; object-fit: cover; }
-.name { font-size: 1.6rem; letter-spacing: 2px; margin-bottom: 10px; }
-.dhikr { font-size: 1.8rem; font-weight: bold; color: #ffffff; }
-
-.buttons-box { flex: 1; display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 290px; margin-right: auto; }
-.btn { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; color: white; text-decoration: none; border-radius: 20px; font-weight: 500; transition: transform 0.2s; }
-.btn:hover { transform: translateY(-2px); filter: brightness(1.15); }
+/* الألوان */
 .discord-btn { background: linear-gradient(135deg, #4459f7 0%, #2b39b5 100%); }
 .epic-btn { background: linear-gradient(135deg, #202020 0%, #111111 100%); }
-.steam-btn { background: linear-gradient(135deg, #002ff5 0%, #001cb4 100%); }
-.trade-btn { background: linear-gradient(135deg, #4655cc 0%, #293599 100%); }
 
-/* تنسيق الشخصية - قمت بضبط الـ Z-Index والأنيميشن */
-.peeking-char {
-    position: absolute;
-    top: -55px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    z-index: 5; /* تأكد أنها أقل من أي عناصر تفاعلية أخرى إذا لزم الأمر */
-    pointer-events: none;
-    animation: peekAnimation 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-@keyframes peekAnimation {
-    0% { top: 0px; opacity: 0; }
-    100% { top: -55px; opacity: 1; }
-}
-
-/* تحديد حجم أيقونة إبيك جيمز بدقة داخل الزر */
-.epic-btn .btn-img-icon {
-    width: 25px !important;    /* حجم ثابت للأيقونة */
-    height: 25px !important;   /* حجم ثابت للأيقونة */
-    object-fit: contain;       /* تضمن عدم تمدد الصورة */
-    display: block;            /* لمنع أي تداخل في التصميم */
-}
-
-/* تنسيق إضافي لضمان بقاء الأزرار متناسقة */
-.buttons-box a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    overflow: hidden; /* لمنع أي عنصر من الخروج عن حدود الزر */
-}
+/* الشخصية */
+.peeking-char { position: absolute; top: -55px; left: 50%; transform: translateX(-50%); width: 80px; z-index: 5; pointer-events: none; animation: peekAnimation 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes peekAnimation { 0% { top: 0px; opacity: 0; } 100% { top: -55px; opacity: 1; } }
