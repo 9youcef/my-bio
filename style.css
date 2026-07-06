@@ -88,3 +88,20 @@ body {
     0% { top: 0px; opacity: 0; }
     100% { top: -55px; opacity: 1; }
 }
+
+/* تحديد حجم أيقونة إبيك جيمز بدقة داخل الزر */
+.epic-btn .btn-img-icon {
+    width: 25px !important;    /* حجم ثابت للأيقونة */
+    height: 25px !important;   /* حجم ثابت للأيقونة */
+    object-fit: contain;       /* تضمن عدم تمدد الصورة */
+    display: block;            /* لمنع أي تداخل في التصميم */
+}
+
+/* تنسيق إضافي لضمان بقاء الأزرار متناسقة */
+.buttons-box a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* لمنع أي عنصر من الخروج عن حدود الزر */
+}
