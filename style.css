@@ -31,10 +31,11 @@ body {
     position: relative;
     width: 90%;
     max-width: 850px;
-    border-radius: 25px;
-    overflow: hidden; /* هذا السطر هو الذي يضمن بقاء الفيديوهات داخل الحواف الدائرية */
+    border-radius: 25px; /* الزوايا الدائرية هنا */
+    margin-top: 100px; 
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
     border: 1px solid rgba(255, 0, 0, 0.3);
+    /* لا تضع overflow: hidden هنا إذا أردت رؤية الشخصية */
 }
 
 /* 3. فيديو السحاب داخل المربع */
